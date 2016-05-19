@@ -33,6 +33,7 @@
 
 // IB Action Helper methods
 
+- (IBAction)presentTopMenuViewController:(id)sender;
 - (IBAction)presentLeftMenuViewController:(id)sender;
 - (IBAction)presentRightMenuViewController:(id)sender;
 

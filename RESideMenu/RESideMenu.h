@@ -36,11 +36,13 @@
 
 #if __IPHONE_8_0
 @property (strong, readwrite, nonatomic) IBInspectable NSString *contentViewStoryboardID;
+@property (strong, readwrite, nonatomic) IBInspectable NSString *topMenuViewStoryboardID;
 @property (strong, readwrite, nonatomic) IBInspectable NSString *leftMenuViewStoryboardID;
 @property (strong, readwrite, nonatomic) IBInspectable NSString *rightMenuViewStoryboardID;
 #endif
 
 @property (strong, readwrite, nonatomic) UIViewController *contentViewController;
+@property (strong, readwrite, nonatomic) UIViewController *topMenuViewController;
 @property (strong, readwrite, nonatomic) UIViewController *leftMenuViewController;
 @property (strong, readwrite, nonatomic) UIViewController *rightMenuViewController;
 @property (weak, readwrite, nonatomic) id<RESideMenuDelegate> delegate;
@@ -64,6 +66,8 @@
 @property (assign, readwrite, nonatomic) IBInspectable CGFloat contentViewScaleValue;
 @property (assign, readwrite, nonatomic) IBInspectable CGFloat contentViewInLandscapeOffsetCenterX;
 @property (assign, readwrite, nonatomic) IBInspectable CGFloat contentViewInPortraitOffsetCenterX;
+@property (assign, readwrite, nonatomic) IBInspectable CGFloat contentViewInLandscapeOffsetCenterY;
+@property (assign, readwrite, nonatomic) IBInspectable CGFloat contentViewInPortraitOffsetCenterY;
 @property (assign, readwrite, nonatomic) IBInspectable CGFloat parallaxMenuMinimumRelativeValue;
 @property (assign, readwrite, nonatomic) IBInspectable CGFloat parallaxMenuMaximumRelativeValue;
 @property (assign, readwrite, nonatomic) IBInspectable CGFloat parallaxContentMinimumRelativeValue;
@@ -76,7 +80,9 @@
 
 - (id)initWithContentViewController:(UIViewController *)contentViewController
              leftMenuViewController:(UIViewController *)leftMenuViewController
-            rightMenuViewController:(UIViewController *)rightMenuViewController;
+            rightMenuViewController:(UIViewController *)rightMenuViewController
+              topMenuViewcontroller:(UIViewController *)topMenuViewcontroller;
+- (void)presentTopMenuViewController;
 - (void)presentLeftMenuViewController;
 - (void)presentRightMenuViewController;
 - (void)hideMenuViewController;

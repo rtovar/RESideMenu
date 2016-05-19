@@ -46,6 +46,12 @@
 #pragma mark -
 #pragma mark IB Action Helper methods
 
+- (IBAction)presentTopMenuViewController:(id)sender
+{
+    [self.sideMenuViewController presentTopMenuViewController];
+}
+
+
 - (IBAction)presentLeftMenuViewController:(id)sender
 {
     [self.sideMenuViewController presentLeftMenuViewController];
